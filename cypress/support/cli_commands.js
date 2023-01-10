@@ -1,0 +1,6 @@
+Cypress.Commands.add('cloneViaSSH', project => {
+    const domain = Cypress.config('baseUrl').replace('http://', '')
+
+    //cy.exec('type nul > “nomedoarquivo.txt”')
+    cy.exec(`git clone git@${domain}:${Cypress.env('user_name')}/${project.name}.git`)
+  })
